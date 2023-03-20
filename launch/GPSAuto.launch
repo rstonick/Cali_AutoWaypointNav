@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Run gazebo to simulate robot -->
+    <include file="$(find rover_autonav)/launch/spawn_cali_ecst_lab.launch"/> 
+     
+    <!-- Run gmapping to create map 
+    <include file="$(find gps_waypoint)/launch/gmapping.launch" /> -->
+    <!-- Launch robot_localization and navsat node-->
+    <include file="$(find gps_waypoint)/launch/localization_and_navsattransform_sim_2.launch"/>
+    <!-- Launch Autonomous nav-->
+
+
+    
+    
+    <!-- Run rviz 
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gps_waypoint)/rviz_config/outdoor_waypoint_nav_continuous_rviz.rviz" /> -->
+    <!-- Run husky_navigation to start move_base 
+    <include file="$(find gps_waypoint)/launch/move_base_nav_continuous.launch" /> -->
+</launch>
